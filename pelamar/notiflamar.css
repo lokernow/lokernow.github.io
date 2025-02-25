@@ -1,0 +1,20 @@
+/* CSS untuk membuat card berada di tengah */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Membuatnya sejajar vertikal */
+    font-size: 15px;
+}
+
+.btn-fixed {
+    min-width: 150px; /* Atur ukuran minimal */
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center; /* Tengah secara horizontal */
+    gap: 80px; /* Jarak antar tombol */
+    margin-top: 60px;
+}
+
