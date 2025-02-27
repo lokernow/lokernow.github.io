@@ -1,0 +1,78 @@
+section{
+    margin-top: 5vh;
+}
+
+.names:hover{
+    text-decoration: underline;
+}
+
+button:not(.collapsed) {
+    border-color: white !important; 
+}
+
+#loker .card{
+    width: 22.5rem;
+}
+
+.perusahaan .nama{
+    color: #289dd2;
+    margin: 0;
+}
+.button {
+    background-color: #ff007f;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #e60073;
+}
+
+/* Styling untuk container utama iklan lowongan */
+#lowongan {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+
+/* Styling untuk judul */
+#lowongan .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styling untuk tab navigasi */
+.tabs {
+    display: flex;
+    gap: 20px;
+    
+}
+#lowongan button{
+    margin-left: auto;
+}
+
+.tab {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: gray; /* Warna default */
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+
+.tab:hover {
+    color: black; /* Warna saat dihover */
+}
+
+.tab.active {
+    color: black; /* Warna lebih gelap saat aktif */
+    border-bottom: 2px solid #007bff;
+}
