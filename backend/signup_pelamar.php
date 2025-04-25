@@ -37,12 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; 
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'wijayaangelina0@gmail.com'; // Email pengirim
-        $mail->Password   = 'seasyrweotbvbkbt';   // App password Gmail
+        $mail->Username   = 'sistechweb2@gmail.com'; // Email pengirim
+        $mail->Password   = 'nhqvongvxtexojrp';   // App password Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
-        $mail->setFrom('wijayaangelina0@gmail.com', 'Lokernow'); // Nama pengirim
+        $mail->setFrom('sistechweb2@gmail.com', 'Lokernow'); // Nama pengirim
         $mail->addAddress($email);
 
         $mail->isHTML(true);
@@ -54,9 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>Atau salin link ini: <br> http://localhost/lokernow/backend/verify.php?token=$token</p>
         ";
 
-        $mail->send();
-        header("Location: register_success.php");
-        exit;
+        if($mail->send()) {
+            header("Location: register_success.php");
+            exit;
+        } else {
+            var_dump($mail->ErrorInfo);
+            exit;
+        }
         
     } catch (Exception $e) {
         echo "Gagal mengirim email verifikasi. Mailer Error: {$mail->ErrorInfo}";

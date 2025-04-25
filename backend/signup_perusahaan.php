@@ -37,12 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; // Ganti sesuai layanan SMTP kamu
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'wijayaangelina0@gmail.com'; // Email pengirim
-        $mail->Password   = 'seasyrweotbvbkbt';   // App password Gmail
+        $mail->Username   = 'sistechweb2@gmail.com'; // Email pengirim
+        $mail->Password   = 'nhqvongvxtexojrp';   // App password Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
-        $mail->setFrom('wijayaangelina0@gmail.com', 'Lokernow'); // Nama pengirim
+        $mail->setFrom('sistechweb2@gmail.com', 'Lokernow'); // Nama pengirim
         $mail->addAddress($email);
 
         $mail->isHTML(true);
