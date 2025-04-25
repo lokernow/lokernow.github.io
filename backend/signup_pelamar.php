@@ -54,13 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>Atau salin link ini: <br> http://localhost/lokernow/backend/verify.php?token=$token</p>
         ";
 
-        if($mail->send()) {
-            header("Location: register_success.php");
-            exit;
-        } else {
-            var_dump($mail->ErrorInfo);
-            exit;
-        }
+        $mail->send();
+        header("Location: register_success.php");
+        exit;
         
     } catch (Exception $e) {
         echo "Gagal mengirim email verifikasi. Mailer Error: {$mail->ErrorInfo}";
