@@ -117,15 +117,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['status'])) {
                 <li><a  href="aktivitasperusahaan.php">Aktivitas</a></li>
                 <li><a class="nav-link active" href="profilperusahaan.php">Profil</a></li>
                 <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Tambah Loker</a></li>
-                <li class="d-lg-none"><a href="logout.php">Log Out</a></li>
+                <li class="d-lg-none"><a href="backend/logout.php">Log Out</a></li>
               </ul>
             </nav>
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
-                <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
+                <a href="post-job.php" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
                   <span class="mr-2 icon-add"></span>Tambah Loker
                 </a>
-                <a href="logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
+                <a href="backend/logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
                   <span class="mr-2 icon-lock_outline"></span>Log Out
                 </a>
               </div>

@@ -27,7 +27,7 @@ if (move_uploaded_file($tmp, $path)) {
     $stmt->bind_param("ssssssssi", $nama_perusahaan, $gambar, $email, $judul_pekerjaan, $lokasi, $wilayah, $tipe_pekerjaan, $deskripsi , $id_perusahaan);
 
     if ($stmt->execute()) {
-        header("Location: http://localhost/lokernow/aktivitasperusahaan.php?success=Job+berhasil+ditambahkan");
+        header("Location: http://localhost/23si3/PROJECT/aktivitasperusahaan.php?success=Job+berhasil+ditambahkan");
         exit(); // Sangat disarankan untuk menghentikan eksekusi setelah redirect
     } else {
         echo "Gagal menyimpan data: " . $stmt->error;

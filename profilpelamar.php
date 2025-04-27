@@ -4,7 +4,7 @@ session_start();
 
 // Pastikan user sudah login
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: masuk.html");
     exit();
 }
 
@@ -205,13 +205,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <li><a href="berandapelamar.php">Beranda</a></li>
                         <li><a href="rekomendasipelamar.php">Rekomendasi</a></li>
                         <li class="has-children">
-                            <a class="nav-link active">Aktivitas</a>
+                            <a>Aktivitas</a>
                             <ul class="dropdown">
                                 <li><a href="applied.php">Lamaran</a></li>
                                 <li><a href="saved.php">Disimpan</a></li>
                             </ul>
                         </li>
-                        <li><a href="profilpelamar.php">Profil</a></li>
+                        <li><a class="nav-link active" href="profilpelamar.php">Profil</a></li>
                     </ul>
                 </nav>
 

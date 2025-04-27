@@ -1,5 +1,13 @@
 <?php
+session_start();
 require_once 'backend/db.php';
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+  header("Location: masuk.html");
+  exit();
+}
+
 
 // Initialize search parameters
 $keyword = $_GET['keyword'] ?? '';
@@ -94,10 +102,10 @@ $result = $stmt->get_result();
 
             <nav class="mx-auto site-navigation">
               <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                <li><a href="berandapelamar.php">Beranda</a></li>
+                <li><a class="nav-link active" href="berandapelamar.php">Beranda</a></li>
                 <li><a href="rekomendasipelamar.php">Rekomendasi</a></li>
                 <li class="has-children">
-                  <a class="nav-link active">Aktivitas</a>
+                  <a>Aktivitas</a>
                   <ul class="dropdown">
                     <li><a href="applied.php">Lamaran</a></li>
                     <li><a href="saved.php">Disimpan</a></li>
@@ -109,7 +117,7 @@ $result = $stmt->get_result();
 
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
-                <a href="logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
+                <a href="backend/logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
                   <span class="mr-2 icon-lock_outline"></span>Log Out
                 </a>
               </div>

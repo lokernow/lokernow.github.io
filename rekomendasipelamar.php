@@ -62,9 +62,9 @@ $conn->close();
             <nav class="mx-auto site-navigation">
               <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
                 <li><a href="berandapelamar.php">Beranda</a></li>
-                <li><a href="rekomendasipelamar.php">Rekomendasi</a></li>
+                <li><a class="nav-link active" href="rekomendasipelamar.php">Rekomendasi</a></li>
                 <li class="has-children">
-                  <a class="nav-link active">Aktivitas</a>
+                  <a>Aktivitas</a>
                   <ul class="dropdown">
                     <li><a href="applied.php">Lamaran</a></li>
                     <li><a href="saved.php">Disimpan</a></li>

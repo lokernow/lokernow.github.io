@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -41,32 +40,30 @@
     </div> <!-- .site-mobile-menu -->
     
 
-    
     <!-- NAVBAR -->
     <header class="site-navbar mt-3">
-        <div class="container-fluid">
-          <div class="row align-items-center">
-            <div class="site-logo col-6"><img src="images/logo.png" alt="" width="80vw"></div>
-            <nav class="mx-auto site-navigation">
-              <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                <li><a href="berandaperusahaan.html">Beranda</a></li>
-                <li><a href="aktivitasperusahaan.html">Aktivitas</a></li>
-                <li><a href="profilperusahaan.html">Profil</a></li>
-                <li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Tambah Loker</a></li>
-                <li class="d-lg-none"><a href="index.html">Log Out</a></li>
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="site-logo col-6"><img src="images/logo.png" alt="" width="80vw"></div>
+          <nav class="mx-auto site-navigation">
+            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+              <li><a class="nav-link active" href="berandaperusahaan.php">Beranda</a></li>
+              <li><a href="aktivitasperusahaan.php">Aktivitas</a></li>
+              <li><a href="profilperusahaan.php">Profil</a></li>
+              <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Tambah Loker</a></li>
+              <li class="d-lg-none"><a href="backend/logout.php">Log Out</a></li>
             </ul>
-            </nav>
-            <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-              <div class="ml-auto">
-                <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Tambah Loker</a>
-                <a href="index.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log Out</a>
-              </div>
-              <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+          </nav>
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="ml-auto">
+              <a href="post-job.php" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Tambah Loker</a>
+              <a href="logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log Out</a>
             </div>
-  
+            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
   
     <!-- HOME -->
     <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
@@ -82,7 +79,6 @@
     
     <section class="site-section">
       <div class="container">
-
         <div class="row align-items-center mb-5">
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="d-flex align-items-center">
@@ -97,74 +93,77 @@
                 <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-open_in_new mr-2"></span>Tinjau</a>
               </div>
               <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md">Simpan</a>
+                <button type="submit" form="jobForm" class="btn btn-block btn-primary btn-md">Simpan</button>
               </div>
             </div>
           </div>
         </div>
         <div class="row mb-5">
           <div class="col-lg-12">
-            <form class="p-4 p-md-5 border rounded" method="post">
+            <form class="p-4 p-md-5 border rounded" method="post" action="backend/simpan_lowongan.php" enctype="multipart/form-data" id="jobForm">
               <h3 class="text-black mb-5 border-bottom pb-2">Detail Pekerjaan</h3>
               
               <div class="form-group">
-                <label for="company-website-tw d-block">Unggah Gambar</label> <br>
+                <label for="company-image">Unggah Gambar</label> <br>
                 <label class="btn btn-primary btn-md btn-file">
-                  Telusuri File<input type="file" hidden>
+                  Telusuri File<input type="file" name="gambar" id="company-image" hidden>
                 </label>
               </div>
 
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="you@yourdomain.com">
+                <input type="email" name="email" class="form-control" id="email" placeholder="you@yourdomain.com" required>
               </div>
+
+              <div class="form-group">
+                <label for="company-name">Nama Perusahaan</label>
+                <input type="text" name="nama_perusahaan" class="form-control" id="company-name" placeholder="Nama Perusahaan Anda" required>
+              </div>
+
               <div class="form-group">
                 <label for="job-title">Judul Pekerjaan</label>
-                <input type="text" class="form-control" id="job-title" placeholder="Product Designer">
+                <input type="text" name="judul_pekerjaan" class="form-control" id="job-title" placeholder="Product Designer" required>
               </div>
+
               <div class="form-group">
                 <label for="job-location">Lokasi</label>
-                <input type="text" class="form-control" id="job-location" placeholder="e.g. New York">
+                <input type="text" name="lokasi" class="form-control" id="job-location" placeholder="e.g. New York" required>
               </div>
 
               <div class="form-group">
                 <label for="job-region">Wilayah Pekerjaan</label>
-                <select class="selectpicker border rounded" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Region">
-                      <option>Dimana Saja</option>
-                      <option>Jakarta</option>
-                      <option>Surabaya</option>
-                      <option>Bogor</option>
-                      <option>Bandung</option>
-                      <option>Medan</option>
-                      <option>Batam</option>
-                      <option>Yogyakarta</option>
-                      <option>Semarang</option>
-                    </select>
+                <select class="selectpicker border rounded" id="job-region" name="wilayah" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Region" required>
+                  <option>Dimana Saja</option>
+                  <option>Jakarta</option>
+                  <option>Surabaya</option>
+                  <option>Bogor</option>
+                  <option>Bandung</option>
+                  <option>Medan</option>
+                  <option>Batam</option>
+                  <option>Yogyakarta</option>
+                  <option>Semarang</option>
+                </select>
               </div>
 
               <div class="form-group">
                 <label for="job-type">Tipe Perkerjaan</label>
-                <select class="selectpicker border rounded" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
-                  <option>Part Time</option>
-                  <option>Full Time</option>
+                <select class="selectpicker border rounded" id="job-type" name="tipe_pekerjaan" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type" required>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Full Time">Full Time</option>
                 </select>
               </div>
 
-
               <div class="form-group">
                 <label for="job-description">Deskripsi Pekerjaan</label>
-                <div class="editor" id="editor-1">
-                  <p>Tulis Deskripsi Pekerjaanmu!</p>
-                </div>
+                <textarea name="deskripsi" id="job-description" class="form-control" rows="10" placeholder="Tulis Deskripsi Pekerjaanmu!" required></textarea>
               </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    
-    
     <footer class="site-footer">
-
       <a href="#top" class="smoothscroll scroll-top">
         <span class="icon-keyboard_arrow_up"></span>
       </a>
@@ -213,9 +212,8 @@
         <div class="row text-center">
           <div class="col-12">
             <p class="copyright"><small>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            </small></p>
           </div>
         </div>
       </div>
@@ -236,12 +234,8 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/quill.min.js"></script>
     
-    
     <script src="js/bootstrap-select.min.js"></script>
     
     <script src="js/custom.js"></script>
-   
-   
-     
   </body>
 </html>

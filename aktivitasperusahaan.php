@@ -4,7 +4,7 @@ require_once 'backend/db.php';
 
 // Check if company is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: masuk.html");
     exit();
 }
 
@@ -79,8 +79,8 @@ $conn->close();
           <div class="site-logo col-6"><img src="images/logo.png" alt="" width="80vw"></div>
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a class="nav-link active" href="berandaperusahaan.php">Beranda</a></li>
-              <li><a href="aktivitasperusahaan.php">Aktivitas</a></li>
+              <li><a href="berandaperusahaan.php">Beranda</a></li>
+              <li><a class="nav-link active" href="aktivitasperusahaan.php">Aktivitas</a></li>
               <li><a href="profilperusahaan.php">Profil</a></li>
               <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Tambah Loker</a></li>
               <li class="d-lg-none"><a href="backend/logout.php">Log Out</a></li>
@@ -89,7 +89,7 @@ $conn->close();
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
               <a href="post-job.php" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Tambah Loker</a>
-              <a href="logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log Out</a>
+              <a href="backend/logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log Out</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>

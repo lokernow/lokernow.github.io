@@ -115,7 +115,7 @@ $conn->close();
                 <li><a class="nav-link active" href="aktivitasperusahaan.php">Aktivitas</a></li>
                 <li><a href="profilperusahaan.php">Profil</a></li>
                 <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Tambah Loker</a></li>
-                <li class="d-lg-none"><a href="logout.php">Log Out</a></li>
+                <li class="d-lg-none"><a href="backend/logout.php">Log Out</a></li>
               </ul>
             </nav>
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">

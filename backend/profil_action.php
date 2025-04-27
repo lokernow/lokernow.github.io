@@ -5,7 +5,7 @@ require_once 'db.php';
 if (!isset($_SESSION['user_id'])) {
     $_SESSION['message'] = "Anda harus login terlebih dahulu";
     $_SESSION['message_type'] = "danger";
-    header("Location: ../login.php");
+    header("Location: ../masuk.html");
     exit();
 }
 

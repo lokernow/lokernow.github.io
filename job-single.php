@@ -104,7 +104,7 @@ $conn->close();
 
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
-                <a href="logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
+                <a href="backend/logout.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
                   <span class="mr-2 icon-lock_outline"></span>Log Out
                 </a>
               </div>
