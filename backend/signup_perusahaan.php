@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $token = bin2hex(random_bytes(32));
         $expiry = date('Y-m-d H:i:s', strtotime('+1 day')); // token 1 hari
 
-        $stmt2 = $conn->prepare("INSERT INTO verification_tokens (user_id, token, expiry_date) VALUES (?, ?, ?)");
+        $stmt2 = $conn->prepare("INSERT INTO verification_tokens (company_id, token, expiry_date) VALUES (?, ?, ?)");
         $stmt2->bind_param("iss", $user_id, $token, $expiry);
 
         if ($stmt2->execute()) {
@@ -51,8 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $mail->Body    = "
                     <h3>Halo</h3>
                     <p>Terima kasih sudah mendaftar. Silakan klik tombol di bawah ini untuk memverifikasi email Anda:</p>
-                    <p><a href='http://localhost/lokernow/backend/verify-perusahaan.php?token=$token' style='padding:10px 20px; background:#28a745; color:white; text-decoration:none;'>Verifikasi Email</a></p>
-                    <p>Atau salin link ini: <br> http://localhost/lokernow/backend/verify-perusahaan.php?token=$token</p>
+                    <p><a href='http://localhost/23si3/PROJECT/backend/verify-perusahaan.php?token=$token' style='padding:10px 20px; background:#28a745; color:white; text-decoration:none;'>Verifikasi Email</a></p>
+                    <p>Atau salin link ini: <br> http://localhost/23si3/PROJECT/backend/verify-perusahaan.php?token=$token</p>
                 ";
 
                 if ($mail->send()) {

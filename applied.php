@@ -14,15 +14,17 @@ $pelamar_id = $_SESSION['user_id'];
 $query = "SELECT l.*, lo.judul_pekerjaan AS lowongan_judul, lo.lokasi, pe.nama_perusahaan, pe.logo
           FROM lamaran l
           JOIN lowongan_kerja lo ON l.lowongan_id = lo.id
-          JOIN company_profiles pe ON lo.id_perusahaan = pe.id
+          JOIN company_profiles pe ON lo.id_perusahaan = pe.id_perusahaan
           WHERE l.pelamar_id = ?
           ORDER BY l.tanggal_lamaran DESC";
+
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $pelamar_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $lamaran = $result->fetch_all(MYSQLI_ASSOC);
 $total_lamaran = count($lamaran);
+// var_dump($lamaran)
 ?>
 
 <!DOCTYPE html>

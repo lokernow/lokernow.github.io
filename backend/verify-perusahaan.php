@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
     
-    $stmt = $conn->prepare("SELECT user_id, expiry_date FROM verification_tokens WHERE token = ?");
+    $stmt = $conn->prepare("SELECT company_id, expiry_date FROM verification_tokens WHERE token = ?");
     $stmt->bind_param("s", $token);
     $stmt->execute();
     $result = $stmt->get_result();

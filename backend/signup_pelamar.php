@@ -50,8 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Body    = "
             <h3>Halo</h3>
             <p>Terima kasih sudah mendaftar. Silakan klik tombol di bawah ini untuk memverifikasi email Anda:</p>
-            <p><a href='http://localhost/lokernow/backend/verify.php?token=$token' style='padding:10px 20px; background:#28a745; color:white; text-decoration:none;'>Verifikasi Email</a></p>
-            <p>Atau salin link ini: <br> http://localhost/lokernow/backend/verify.php?token=$token</p>
+            <p><a href='http://localhost/23si3/PROJECT/backend/verify.php?token=$token' style='padding:10px 20px; background:#28a745; color:white; text-decoration:none;'>Verifikasi Email</a></p>
+            <p>Atau salin link ini: <br> http://localhost/23si3/PROJECT/backend/verify.php?token=$token</p>
         ";
 
         $mail->send();

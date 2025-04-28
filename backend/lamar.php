@@ -23,7 +23,8 @@ $stmt = $conn->prepare("SELECT id FROM lamaran WHERE pelamar_id = ? AND lowongan
 $stmt->bind_param("ii", $user_id, $lowongan_id);
 $stmt->execute();
 if ($stmt->get_result()->num_rows > 0) {
-    header("Location: " . $_SERVER['HTTP_REFERER'] . "?error=Anda+sudah+melamar");
+    var_dump("Anda sudah melamar");
+    // header("Location: " . $_SERVER['HTTP_REFERER'] . "?error=Anda+sudah+melamar");
     exit;
 }
 
@@ -34,8 +35,10 @@ $stmt->execute();
 $resume = $stmt->get_result()->fetch_assoc()['resume'];
 
 if (empty($resume)) {
-    header("Location: " . $_SERVER['HTTP_REFERER'] . "?error=Resume+belum+diupload");
-    exit;
+    // var_dump("no_resume");
+    $resume="";
+    // header("Location: " . $_SERVER['HTTP_REFERER'] . "?error=Resume+belum+diupload");
+    // exit;
 }
 
 // Buat lamaran
@@ -44,10 +47,10 @@ $stmt->bind_param("iiss", $user_id, $lowongan_id, $resume, $surat_lamaran);
 
 if ($stmt->execute()) {
     header("Location: ../applied.php?success=Lamaran+berhasil+dikirim");
-
     exit;
 } else {
-    header("Location: " . $_SERVER['HTTP_REFERER'] . "?error=Gagal+mengirim+lamaran");
+    var_dump($stmt->error);
+    // header("Location: " . $_SERVER['HTTP_REFERER'] . "?error=Gagal+mengirim+lamaran");
     exit;
 }
 

@@ -22,6 +22,7 @@ try {
               FROM lowongan_kerja l
               JOIN company_profiles c ON l.id_perusahaan = c.id_perusahaan
               WHERE l.id = ? AND l.id_perusahaan = ?";
+
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ii", $job_id, $id_perusahaan);
     $stmt->execute();
@@ -281,7 +282,7 @@ $conn->close();
             <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
               <a href="profillamaran.php?id=<?php echo $applicant['id']; ?>"></a>
               <div class="job-listing-logo">
-                <img src="<?php echo !empty($applicant['foto_profil']) ? htmlspecialchars($applicant['foto_profil']) : 'images/jay.jpg'; ?>" class="rounded-circle p-1" alt="" width="80vw"/>
+                <img src="<?php echo !empty($applicant['foto_profil']) ? htmlspecialchars($applicant['foto_profil']) : 'images/jay.jpg'; ?>" class="rounded-circle p-1" alt="" width="80vw" height="80vw"/>
               </div>
 
               <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">

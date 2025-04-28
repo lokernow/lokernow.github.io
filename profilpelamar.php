@@ -262,9 +262,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         
                         <div class="form-group">
                             <?php if (!empty($pelamar['foto_profil'])): ?>
-                                <img src="<?= htmlspecialchars($pelamar['foto_profil']) ?>" class="rounded-circle" alt="Foto Profil" width="100vw"><br>
+                                <img src="<?= htmlspecialchars($pelamar['foto_profil']) ?>" class="rounded-circle" alt="Foto Profil" width="100vw" height="100vw"><br>
                             <?php else: ?>
-                                <img src="images/default-profile.jpg" class="rounded-circle" alt="Foto Profil" width="100vw"><br>
+                                <img src="images/default-profile.jpg" class="rounded-circle" alt="Foto Profil" width="100vw" height="100vw"><br>
                             <?php endif; ?>
                             <label class="mt-2 btn btn-primary btn-sm btn-file">
                                 Upload Pas Foto
