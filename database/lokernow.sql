@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2025 at 05:31 PM
+-- Generation Time: Apr 28, 2025 at 05:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -262,7 +262,8 @@ ALTER TABLE `simpan_lamaran`
 ALTER TABLE `verification_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `token` (`token`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `company_id` (`company_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -374,7 +375,8 @@ ALTER TABLE `simpan_lamaran`
 -- Constraints for table `verification_tokens`
 --
 ALTER TABLE `verification_tokens`
-  ADD CONSTRAINT `verification_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `pelamar` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `verification_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `pelamar` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `verification_tokens_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `perusahaan` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
