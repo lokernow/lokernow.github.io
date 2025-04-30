@@ -111,7 +111,7 @@ $total_lamaran = count($lamaran);
             <ul class="job-listings mb-5">
               <?php foreach ($lamaran as $l): ?>
                 <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-                  <a href="applieddetail.php?id=<?= $l['id'] ?>"></a>
+                  <a href="applieddetail.php?id=<?= $l['lowongan_id'] ?>"></a>
                   <div class="job-listing-logo">
                     <img src="<?= !empty($l['logo']) ? 'backend/uploads/logos/'.$l['logo'] : 'images/job_logo_1.jpg' ?>" 
                          alt="<?= $l['nama_perusahaan'] ?>" class="img-fluid" />

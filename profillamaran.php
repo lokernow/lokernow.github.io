@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 // Get lamaran ID from URL
 $lamaran_id = $_GET['id'] ?? null;
 if (!$lamaran_id) {
-    header("Location: aktivitasperusahaan.html");
+    header("Location: aktivitasperusahaan.php");
     exit();
 }
 
@@ -23,7 +23,7 @@ $query = "SELECT l.*,
           FROM lamaran l
           JOIN profile_pelamar pp ON l.pelamar_id = pp.user_id
           JOIN lowongan_kerja lo ON l.lowongan_id = lo.id
-          JOIN company_profiles pe ON lo.id_perusahaan = pe.id
+          JOIN company_profiles pe ON lo.id_perusahaan = pe.id_perusahaan
           WHERE l.id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $lamaran_id);
@@ -31,7 +31,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    header("Location: aktivitasperusahaan.html");
+    header("Location: aktivitasperusahaan.php");
     exit();
 }
 
@@ -114,8 +114,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['status'])) {
             <nav class="mx-auto site-navigation">
               <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
                 <li><a href="berandaperusahaan.php">Beranda</a></li>
-                <li><a  href="aktivitasperusahaan.php">Aktivitas</a></li>
-                <li><a class="nav-link active" href="profilperusahaan.php">Profil</a></li>
+                <li><a class="nav-link active" href="aktivitasperusahaan.php">Aktivitas</a></li>
+                <li><a href="profilperusahaan.php">Profil</a></li>
                 <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Tambah Loker</a></li>
                 <li class="d-lg-none"><a href="backend/logout.php">Log Out</a></li>
               </ul>

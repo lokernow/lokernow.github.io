@@ -16,7 +16,7 @@ if (isset($_GET['token'])) {
     
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $user_id = $row['user_id'];
+        $user_id = $row['company_id'];
         $expiry_date = $row['expiry_date'];
         
         if (strtotime($expiry_date) > time()) {

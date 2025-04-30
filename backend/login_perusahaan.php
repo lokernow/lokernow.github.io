@@ -13,11 +13,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $perusahaan = $result->fetch_assoc();
 
         if (password_verify($password, $perusahaan['password'])) {
-            $_SESSION['user_id'] = $perusahaan['id'];
-            $_SESSION['role'] = 'perusahaan';
+            if ($perusahaan['is_verified'] == 1) {
+                $_SESSION['user_id'] = $perusahaan['id'];
+                $_SESSION['role'] = 'perusahaan';
 
-            header("Location: ../berandaperusahaan.php");
-            exit;
+                header("Location: ../berandaperusahaan.php");
+                exit;
+            } else {
+                echo "Akun belum diverifikasi. Silakan cek email Anda untuk link verifikasi.";
+            }
         } else {
             echo "Password salah!";
         }
