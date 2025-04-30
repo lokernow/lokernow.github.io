@@ -109,7 +109,7 @@ $conn->close();
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-3 text-center">
-              <img src="<?php echo !empty($companyProfile['logo']) ? 'backend/uploads/logos/'.$companyProfile['logo'] : 'images/pixell-design-logo-perusahaan-pt-cahayabakti.jpg'; ?>" alt="Logo Perusahaan" width="150vw" />
+              <img src="<?php echo !empty($companyProfile['logo']) ? 'backend/uploads/logos/'.$companyProfile['logo'] : 'images/perusahaan.jpg'; ?>" alt="Logo Perusahaan" width="150vw" />
             </div>
             <div class="col-md-9">
               <p style="margin: 0;font-size: 24px; font-weight: bold; color: white">
